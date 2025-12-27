@@ -571,11 +571,5 @@ def get_results():
     return jsonify(results)
 
 
-# Vercel serverless function handler
-def handler(request):
-    with app.request_context(request.environ):
-        return app.full_dispatch_request()
-
-
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
